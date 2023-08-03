@@ -12,10 +12,14 @@ ViewModel.
 
 | Folder            | Technology             | UI Framework | Network lib                                         | Image lib                                                     |
 |-------------------|------------------------|--------------|-----------------------------------------------------|---------------------------------------------------------------|
-| `/flutter`        | Cross-platform, Dart   | Flutter      |                                                     |                                                               |
+| `/flutter`        | Cross-platform, Dart   | Flutter      | [http.dart](https://pub.dev/packages/http)          | Flutter Image widget                                          |
 | `/kmp`            | Cross-platform, Kotlin | Compose UI   | [Ktor](https://github.com/ktorio/ktor)              | [Kamel](https://github.com/Kamel-Media/Kamel)                 |
 | `/native-ios`     | Native, Swift          | SwiftUI      | [Alamofire](https://github.com/Alamofire/Alamofire) | [AlamofireImage](https://github.com/Alamofire/AlamofireImage) |
 | `/native-android` | Native, Kotlin         | Compose UI   | [Ktor](https://github.com/ktorio/ktor)              | [Kamel](https://github.com/Kamel-Media/Kamel)                 |
+
+### 📦 Builds
+
+Release builds are available in `/builds`.
 
 ## 📊 Benchmark results
 
