@@ -124,7 +124,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Container(
-              height: 200, // Height of the horizontal list
+              height: 100, // Height of the horizontal list
               child: ListView.builder(
                 scrollDirection: Axis.horizontal,
                 itemCount: catImages.length,
