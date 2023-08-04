@@ -25,6 +25,7 @@ kotlin {
         listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
             it.binaries.framework {
                 baseName = "shared"
+                isStatic = true
             }
         }
 
@@ -35,10 +36,19 @@ kotlin {
                 implementation(compose.ui)
 
                 implementation("io.ktor:ktor-client-core:2.3.3")
-                implementation("io.ktor:ktor-client-cio:2.3.3")
-                implementation("media.kamel:kamel-image:0.7.1")
+                implementation("media.kamel:kamel-image:0.7.0")
                 implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.7.3")
                 implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.5.1")
+            }
+        }
+        val androidMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-android:2.3.3")
+            }
+        }
+        val iosMain by getting {
+            dependencies {
+                implementation("io.ktor:ktor-client-darwin:2.3.3")
             }
         }
     }

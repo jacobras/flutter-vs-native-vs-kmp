@@ -2,8 +2,8 @@ package com.sample.cats.data
 
 import com.sample.cats.domain.CatImage
 import com.sample.cats.domain.CatImagesRepository
+import com.sample.cats.network.createKtorEngine
 import io.ktor.client.HttpClient
-import io.ktor.client.engine.cio.CIO
 import io.ktor.client.request.get
 import io.ktor.client.statement.bodyAsText
 import kotlinx.coroutines.Dispatchers
@@ -12,7 +12,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.json.Json
 
 internal class DefaultCatImagesRepository : CatImagesRepository {
-    private val client = HttpClient(CIO)
+    private val client = HttpClient(createKtorEngine())
     private val json = Json { ignoreUnknownKeys = true }
 
     override suspend fun getAll(): List<CatImage> = withContext(Dispatchers.IO) {
