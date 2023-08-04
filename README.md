@@ -24,14 +24,19 @@ Release builds are available in `/builds`.
 
 ### 📦 App size
 
-Android sizes were measured by running Bundletool on the signed, minified release bundles to create an APK set for a
+Android sizes were measured by running Bundletool* on the signed, minified release bundles to create an APK set for a
 Pixel 4a, and then running `get-size` on that APK set.
 
-| Technology  | Android  | iOS     |
-|-------------|----------|---------|
-| **Native**  | 1.113 MB | // TODO |
-| **KMP**     | 1.560 MB | // TODO |
-| **Flutter** | 6.828 MB | // TODO |
+| Technology                      | Android  | iOS     |
+|---------------------------------|----------|---------|
+| **Native** (Compose/SwiftUI)    | 1.113 MB | // TODO |
+| **KMP** (Compose Multiplatform) | 1.463 MB | // TODO |
+| **Flutter**                     | 6.828 MB | // TODO |
+
+*commands used:
+
+* `bundletool build-apks --connected-device --bundle=release.aab --output=release.apks`
+* `bundletool get-size total --apks=release.apks`
 
 ### 🚀 Startup
 
