@@ -27,11 +27,14 @@ Release builds are available in `/builds`.
 Android sizes were measured by running Bundletool* on the signed, minified release bundles to create an APK set for a
 Pixel 4a, and then running `get-size` on that APK set.
 
-| Technology                      | Android  | iOS     |
-|---------------------------------|----------|---------|
-| **Native** (Compose/SwiftUI)    | 1.113 MB | // TODO |
-| **KMP** (Compose Multiplatform) | 1.463 MB | // TODO |
-| **Flutter**                     | 6.828 MB | // TODO |
+| Technology  | Android  | iOS     |
+|-------------|----------|---------|
+| **Native**  | 1.463 MB | // TODO |
+| **KMP**     | 1.463 MB | // TODO |
+| **Flutter** | 6.828 MB | // TODO |
+
+Note: due to https://github.com/Kamel-Media/Kamel/issues/47 the Kamel library isn't being minified. Once that's fixed,
+the Android native and Android KMP builds will both be smaller.
 
 *commands used:
 

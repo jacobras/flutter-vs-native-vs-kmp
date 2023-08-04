@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
+import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
@@ -15,9 +16,10 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
-import coil.compose.AsyncImage
 import com.example.cats.data.DefaultCatImagesRepository
 import com.example.cats.ui.theme.CatImagesViewModel
+import io.kamel.image.KamelImage
+import io.kamel.image.asyncPainterResource
 
 @Composable
 fun CatImagesScreen(paddingValues: PaddingValues) {
@@ -29,8 +31,8 @@ fun CatImagesScreen(paddingValues: PaddingValues) {
     Column(Modifier.padding(paddingValues)) {
         LazyRow {
             items(catImages) { catImage ->
-                AsyncImage(
-                    model = catImage.url,
+                KamelImage(
+                    resource = asyncPainterResource(catImage.url),
                     contentDescription = null,
                     modifier = Modifier
                         .size(100.dp)
@@ -38,14 +40,16 @@ fun CatImagesScreen(paddingValues: PaddingValues) {
                         .clickable {
                             viewModel.selectCat(catImage)
                         },
-                    contentScale = ContentScale.Crop
+                    contentScale = ContentScale.Crop,
+                    onFailure = { Text("Failed: ${it.message}") },
+                    onLoading = { Text("...") }
                 )
             }
         }
 
         selectedCatImage?.let { selected ->
-            AsyncImage(
-                model = selected.url,
+            KamelImage(
+                resource = asyncPainterResource(selected.url),
                 contentDescription = null,
                 modifier = Modifier
                     .fillMaxSize()
