@@ -14,7 +14,7 @@ Each picture can be clicked to show it zoomed in below the list.
 | `/flutter`        | Cross-platform, Dart   | Flutter                  | [http.dart](https://pub.dev/packages/http)          | Built-in image widget                                         |
 | `/kmp`            | Cross-platform, Kotlin | Compose UI Multiplatform | [Ktor](https://github.com/ktorio/ktor)              | [Kamel](https://github.com/Kamel-Media/Kamel)                 |
 | `/native-ios`     | Native, Swift          | SwiftUI                  | [Alamofire](https://github.com/Alamofire/Alamofire) | [AlamofireImage](https://github.com/Alamofire/AlamofireImage) |
-| `/native-android` | Native, Kotlin         | Compose UI               | [Ktor](https://github.com/ktorio/ktor)              | [Coil](https://github.com/coil-kt/coil)                       |
+| `/native-android` | Native, Kotlin         | Compose UI               | [Ktor](https://github.com/ktorio/ktor)              | [Kamel](https://github.com/Kamel-Media/Kamel)                 |
 
 ### 📦 Builds
 
