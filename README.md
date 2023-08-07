@@ -1,4 +1,4 @@
-# Flutter versus Native versus KMP Performance
+# Flutter versus Native versus KMP: a Performance Comparison
 
 Comparing the performance of the same app in Flutter, native and Kotlin Multiplatform (KMP) on Android and iOS.
 
