@@ -25,13 +25,13 @@ Release builds are available in `/builds`.
 ### 📦 App size
 
 Android sizes were measured by running Bundletool* on the signed, minified release bundles to create an APK set for a
-Pixel 4a, and then running `get-size` on that APK set.
+Pixel 4a, and then running `get-size` on that APK set. iOS sizes were measured running the App Thinning Size report.
 
-| Technology  | Android  | iOS     |
-|-------------|----------|---------|
-| **Native**  | 1.463 MB | // TODO |
-| **KMP**     | 1.463 MB | // TODO |
-| **Flutter** | 6.828 MB | // TODO |
+| Technology                   | Android  | iOS     | Remarks                                                      |
+|------------------------------|----------|---------|--------------------------------------------------------------|
+| **Native** (Compose/SwiftUI) | 1.463 MB | 1.7 MB  |                                                              |
+| **KMP** (Compose)            | 1.463 MB | 24.8 MB | Includes Skia on iOS, where Android relies on built-in Skia. |
+| **Flutter**                  | 6.828 MB | 48.1 MB | Also includes Skia on iOS + Flutter framework.               |
 
 Note: due to https://github.com/Kamel-Media/Kamel/issues/47 the Kamel library isn't being minified. Once that's fixed,
 the Android native and Android KMP builds will both be smaller.
@@ -45,10 +45,11 @@ the Android native and Android KMP builds will both be smaller.
 
 Android startup benchmarks were executed
 using [Macrobenchmark](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview), 5 times on
-a Pixel 4a. Test suite was run twice in alternating order.
+a Pixel 4a. Test suite was run twice
+in alternating order. I couldn't get iOS benchmarks to run. They ran, but didn't collect any reports.
 
-| App                                     | min.                 | median               | max.                 |
-|-----------------------------------------|----------------------|----------------------|----------------------|
-| **Native** Android<br/>**Native** iOS   | 408.7 ms<br/>// TODO | 413.1 ms<br/>// TODO | 423.1 ms<br/>// TODO |
-| **KMP** Android<br/>**KMP** iOS         | 403.6 ms<br/>// TODO | 425.3 ms<br/>// TODO | 466.4 ms<br/>// TODO |
-| **Flutter** Android<br/>**Flutter** iOS | 600.5 ms<br/>// TODO | 634.2 ms<br/>// TODO | 649.8 ms<br/>// TODO |
+| App                 | min.     | median   | max.     |
+|---------------------|----------|----------|----------|
+| **Native** Android  | 408.7 ms | 413.1 ms | 423.1 ms |
+| **KMP** Android     | 403.6 ms | 425.3 ms | 466.4 ms |
+| **Flutter** Android | 600.5 ms | 634.2 ms | 649.8 ms |
