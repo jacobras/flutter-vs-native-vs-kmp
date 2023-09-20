@@ -5,9 +5,8 @@ pluginManagement {
         gradlePluginPortal()
     }
     plugins {
-        kotlin("multiplatform") version "1.8.22"
-        id("org.jetbrains.kotlin.plugin.serialization") version "1.8.22"
-        id("org.jetbrains.compose") version "1.4.3"
+        kotlin("multiplatform") version "1.9.10"
+        id("org.jetbrains.kotlin.plugin.serialization") version "1.9.10"
     }
 }
 

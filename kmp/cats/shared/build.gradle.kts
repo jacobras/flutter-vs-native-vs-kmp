@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.example.cats.shared"
-    compileSdk = 33
+    compileSdk = 34
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -15,6 +15,9 @@ android {
     }
     defaultConfig {
         minSdk = 21
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = "1.5.3"
     }
 }
 
@@ -25,7 +28,6 @@ kotlin {
         listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
             it.binaries.framework {
                 baseName = "shared"
-                isStatic = true
             }
         }
 
