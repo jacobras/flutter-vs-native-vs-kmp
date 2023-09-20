@@ -27,11 +27,11 @@ Release builds are available in `/builds`.
 Android sizes were measured by running Bundletool* on the signed, minified release bundles to create an APK set for a
 Pixel 4a, and then running `get-size` on that APK set. iOS sizes were measured running the App Thinning Size report.
 
-| Technology                   | Android  | iOS     | Remarks                                                      |
-|------------------------------|----------|---------|--------------------------------------------------------------|
-| **Native** (Compose/SwiftUI) | 1.463 MB | 1.7 MB  |                                                              |
-| **KMP** (Compose)            | 1.463 MB | 24.8 MB | Includes Skia on iOS, where Android relies on built-in Skia. |
-| **Flutter**                  | 6.828 MB | 48.1 MB | Also includes Skia on iOS + Flutter framework.               |
+| Technology                   | Android  | iOS                              | Remarks                                                      |
+|------------------------------|----------|----------------------------------|--------------------------------------------------------------|
+| **Native** (Compose/SwiftUI) | 1.463 MB | 1.7 MB                           |                                                              |
+| **KMP** (Compose)            | 1.463 MB | 24.8 MB (v1.4)<br>32.2 MB (v1.5) | Includes Skia on iOS, where Android relies on built-in Skia. |
+| **Flutter**                  | 6.828 MB | 17.9 MB                          | Also includes Skia on iOS + Flutter framework.               |
 
 Note: due to https://github.com/Kamel-Media/Kamel/issues/47 the Kamel library isn't being minified. Once that's fixed,
 the Android native and Android KMP builds will both be smaller.
