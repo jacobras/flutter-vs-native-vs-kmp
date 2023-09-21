@@ -43,13 +43,25 @@ the Android native and Android KMP builds will both be smaller.
 
 ### 🚀 Startup
 
+#### Android
+
 Android startup benchmarks were executed
 using [Macrobenchmark](https://developer.android.com/topic/performance/benchmarking/macrobenchmark-overview), 5 times on
 a Pixel 4a. Test suite was run twice
-in alternating order. I couldn't get iOS benchmarks to run. They ran, but didn't collect any reports.
+in alternating order.
 
 | App                 | min.     | median   | max.     |
 |---------------------|----------|----------|----------|
 | **Native** Android  | 408.7 ms | 413.1 ms | 423.1 ms |
 | **KMP** Android     | 403.6 ms | 425.3 ms | 466.4 ms |
 | **Flutter** Android | 600.5 ms | 634.2 ms | 649.8 ms |
+
+#### iOS
+
+The iOS startup tests were run on an iPhone 12 Mini.
+
+| App             | Duration (AppLaunch) |
+|-----------------|----------------------|
+| **Native** iOS  | 1.441 s              |
+| **KMP** iOS     | 1.618 s              |
+| **Flutter** iOS | 1.608 s              |
