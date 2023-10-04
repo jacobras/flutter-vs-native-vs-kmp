@@ -21,10 +21,15 @@ android {
     }
 }
 
+@Suppress("OPT_IN_USAGE")
 kotlin {
+    targetHierarchy.default()
+
+    androidTarget()
+    iosArm64()
+    iosSimulatorArm64()
+
     sourceSets {
-        android()
-        ios()
         listOf(iosX64(), iosArm64(), iosSimulatorArm64()).forEach {
             it.binaries.framework {
                 baseName = "shared"
